@@ -63,15 +63,15 @@ $footerHeight: 21.188rem;
     }
 
     &.facebook {
-      @include maskImage(url('public/images/facebook.png'))
+      @include maskImage(url('/public/images/facebook.png'))
     }
 
     &.twitter {
-      @include maskImage(url('public/images/twitter.png'))
+      @include maskImage(url('/public/images/twitter.png'))
     }
 
     &.pinterest {
-      @include maskImage(url('public/images/pinterest.png'))
+      @include maskImage(url('/public/images/pinterest.png'))
     }
   }
 }
