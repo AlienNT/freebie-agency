@@ -1,0 +1,154 @@
+@import "../variables/colors";
+
+.services-screen {
+  background: #FBFBFB;
+
+  .service-list {
+    flex-wrap: wrap;
+
+    .col {
+      flex: 1 1 33.33%;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      display: flex;
+    }
+  }
+
+  .service-card {
+    background: $colorLight;
+    padding: 3.125rem 2.813rem 2.188rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    max-width: 380px;
+    min-width: 240px;
+    margin: 0 auto;
+
+    &:after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 3px;
+      background: $colorDesignLight;
+      opacity: 0;
+      transition: .2s ease;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+
+    &:hover {
+      &:after {
+        opacity: 1;
+      }
+    }
+  }
+
+  .service-card__wrapper {
+    max-width: 280px;
+  }
+
+  .service-card__title {
+    color: #252525;
+    font-family: $fontOswald;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: 1.28px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    &:after {
+      content: '';
+      display: block;
+      border-radius: 50%;
+      background-color: $colorLight;
+      box-shadow: 0 0 20px #DBDBDB;
+      width: 50px;
+      height: 50px;
+      flex-shrink: 0;
+      order: 2;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: 25px;
+    }
+
+    span {
+      flex: 1 1 calc(100% - 50px);
+      display: block;
+      padding-bottom: 15px;
+      position: relative;
+
+      &:after {
+        content: '';
+        display: block;
+        order: 3;
+        width: 35px;
+        height: 2px;
+        background-color: #252525;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+    }
+  }
+
+  .service-card__description {
+    color: #777;
+    font-family: $fontOpenSans;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25px; /* 208.333% */
+    letter-spacing: 1.008px;
+    margin-bottom: 20px;
+  }
+
+  .service-card__button {
+    color: #252525;
+    font-family: $fontOswald;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: 0.64px;
+    text-transform: uppercase;
+    background: transparent;
+    opacity: .5;
+    transition: .2s ease;
+
+    &:hover {
+      cursor: pointer;
+      opacity: 1;
+    }
+  }
+
+  .branding-card {
+    .service-card__title {
+      &:after {
+        background-image: url("../../images/graphic-design.svg");
+      }
+    }
+  }
+
+  .design-card {
+    .service-card__title {
+      &:after {
+        background-image: url("../../images/pencil-case.svg");
+      }
+    }
+  }
+
+  .development-card {
+    .service-card__title {
+      &:after {
+        background-image: url("../../images/coding.svg");
+      }
+    }
+  }
+}

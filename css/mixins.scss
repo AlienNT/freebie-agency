@@ -1,0 +1,28 @@
+@mixin useBefore($content: '', $width: 100%, $height: 100%) {
+  &:before {
+    content: $content;
+    display: block;
+    width: $width;
+    height: $height;
+  }
+}
+
+@mixin useFont($fontSize: 14px, ) {
+
+}
+
+@mixin darkenBg($bgColor, $percent: 10%) {
+  transition: .2s ease;
+  background: $bgColor;
+  cursor: pointer;
+  &:hover {
+    background: darken($bgColor, $percent);
+  }
+}
+
+@mixin maskImage($url) {
+  mask-image: $url;
+  mask-size: contain;
+  mask-position: center;
+  mask-repeat: no-repeat;
+}

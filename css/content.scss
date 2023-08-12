@@ -1,0 +1,68 @@
+@import "variables/colors";
+@import "mixins";
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main {
+  background: $colorLight;
+}
+
+.screen {
+  min-height: var(--height);
+  padding-top: 8.125rem;
+  padding-bottom: 8.125rem;
+  display: flex;
+  align-items: center;
+  @media #{$mediumBreakpoint} {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+  @media #{$smallBreakpoint} {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+  @media #{$extraSmallBreakpoint} {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+
+.screen-title {
+  color: #252525;
+  font-family: $fontOswald;
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 3.072px;
+  margin-bottom: 5.313rem;
+  @media #{$mediumBreakpoint} {
+    margin-bottom: 5.313rem;
+  }
+  @media #{$smallBreakpoint} {
+    margin-bottom: 3.313rem;
+  }
+  @media #{$extraSmallBreakpoint} {
+    margin-bottom: 1.313rem;
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    width: 2.813rem;
+    height: 2px;
+    background: #252525;
+  }
+}
+
+@import "screens/home";
+@import "screens/we-are";
+@import "screens/services";
+@import "screens/team";
+@import "screens/works";
+@import "screens/blog";
+@import "screens/contacts";

@@ -1,0 +1,23 @@
+$containerWidth: 1200px;
+
+.container {
+  width: 100%;
+  max-width: $containerWidth;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.row {
+  display: flex;
+  width: auto;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.col {
+  padding-left: 15px;
+  padding-right: 15px;
+  flex: 1 1 100%;
+}

@@ -1,0 +1,198 @@
+@import "variables/colors";
+@import "mixins";
+@import "fonts";
+
+
+$headerHeight: 60px;
+
+$opacity: var(--opacity);
+
+@mixin transparent($color, $opacity: 1) {
+  background: transparentize($color, $opacity);
+}
+
+.header {
+  position: fixed;
+  padding-top: 40px;
+  left: 0;
+  width: 100%;
+  z-index: 999999;
+  transition: padding-top .2s ease;
+  display: flex;
+  align-items: center;
+  background: rgba(37, 37, 37, #{$opacity});
+  @media #{$mediumBreakpoint} {
+    background: $colorDark;
+    padding-top: 0;
+    backdrop-filter: blur(8px);
+    transition: .2s ease;
+  }
+
+  .nav-col {
+    justify-content: flex-end;
+    display: flex;
+    flex-wrap: wrap;
+    transition: .2s ease;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    @media #{$mediumBreakpoint} {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+  }
+
+  &.fixed {
+    padding-top: 0;
+  }
+
+  &.scrolled {
+    transition: .2s ease;
+    backdrop-filter: blur(8px);
+    background: $colorLight;
+    box-shadow: 0 0 24px 0 transparentize($colorDark, .5);
+  }
+}
+$burgerSize: 40px;
+.burger {
+  width: $burgerSize;
+  height: $burgerSize;
+  display: none;
+  cursor: pointer;
+
+  &:before, &:after {
+    content: '';
+    display: block;
+    background: $colorLight;
+    height: 4px;
+    border-radius: 5px;
+    transition: .2s ease;
+  }
+
+  .scrolled & {
+    &:before, &:after {
+      background: $colorDark;
+    }
+  }
+
+  &:before {
+    width: 80%;
+  }
+
+  &:after {
+    width: 40%;
+  }
+
+  &.active {
+    position: relative;
+
+    &:before, &:after {
+      width: 80%;
+      position: absolute;
+    }
+
+    &:before {
+      transform: rotate(45deg);
+    }
+
+    &:after {
+      transform: rotate(-45deg);
+    }
+  }
+
+  @media #{$mouseDevice} {
+    &:hover {
+      &:after {
+        width: 80%;
+
+      }
+    }
+  }
+
+  @media #{$mediumBreakpoint} {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+  }
+}
+
+.nav {
+  max-width: 500px;
+  width: 100%;
+  @media #{$mediumBreakpoint} {
+    max-width: unset;
+    flex: 1 1 100%;
+    max-height: 0;
+    height: auto;
+    overflow-y: hidden;
+    transition: .5s ease;
+    &.active {
+      max-height: 800px;
+      flex: 1 1 100%;
+      padding-top: 25px;
+      padding-bottom: 25px;
+
+      ul {
+        transform: translateY(0);
+      }
+    }
+  }
+
+  ul {
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+    gap: 10px;
+    @media #{$mediumBreakpoint} {
+      flex-direction: column;
+      transform: translateY(100%);
+      transition: .5s ease;
+    }
+  }
+}
+
+.nav-link a {
+  color: $colorLight;
+  font-family: $fontOswald;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 1.94px;
+  padding: 5px 0;
+
+  &:after {
+    content: '';
+    display: block;
+    transition: .2s ease;
+    width: 18px;
+    height: 2px;
+    background: $colorDesign;
+    margin-left: auto;
+  }
+
+  &:hover, &.active {
+    &:after {
+      width: 100%;
+    }
+  }
+
+  .scrolled & {
+    color: #252525;
+  }
+
+  @media #{$mediumBreakpoint} {
+    transition: .2s ease;
+    text-align: right;
+    width: 100%;
+    display: block;
+    &:after {
+      content: none;
+    }
+    &:hover, &.active {
+      color: $colorDesignLight;
+    }
+  }
+}
+

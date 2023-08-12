@@ -1,0 +1,33 @@
+@import "normalize";
+@import "flex-grid";
+@import "variables/media";
+@import "variables/colors";
+@import "header";
+@import "content";
+@import "footer";
+
+* {
+  scroll-behavior: smooth;
+}
+
+#app, html, body {
+  height: 100%;
+}
+
+html {
+  background: $colorDark;
+  @media #{$mediumBreakpoint} {
+    font-size: 14px;
+  }
+  @media #{$smallBreakpoint} {
+    font-size: 12px;
+  }
+  @media #{$smallBreakpoint} {
+    font-size: 10px;
+  }
+}
+
+.main {
+  overflow-x: hidden;
+}
+

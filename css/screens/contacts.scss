@@ -1,0 +1,83 @@
+@import "../variables/colors";
+@import "../mixins";
+.contacts-screen {
+  min-height: fit-content;
+  padding-top: 0;
+  padding-bottom: 0;
+  .container {
+    max-width: 1440px;
+  }
+  .contacts-screen__row {
+    background: $colorLight;
+    flex-wrap: wrap;
+  }
+  .contacts-screen__col {
+    flex: 1 1 50%;
+    min-width: 240px;
+    min-height: 18.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    @include darkenBg(#FBFBFB, 5%)
+
+  }
+
+  .contact__title {
+    color: #373737;
+    text-align: center;
+    font-family: $fontOswald;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 2.667px;
+    margin-bottom: 1.375rem;
+
+    &:before {
+      content: '';
+      display: block;
+      width: 2.188rem;
+      height: 2.188rem;
+      margin: auto auto 1rem;
+      background: url("../../images/s7_1.png") no-repeat center / contain;
+
+    }
+  }
+
+  .contact__description {
+    color: #373737;
+    text-align: center;
+    font-family: $fontOpenSans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: 1.556px;
+    &:after {
+      content: '';
+      display: block;
+      width: 9px;
+      height: 9px;
+      margin: 23px auto auto;
+      background: url("../../images/next.png") no-repeat center / contain;
+    }
+  }
+
+  .mail-contact {
+    @include darkenBg($colorDesignLight);
+
+    .contact__title {
+      color: #FFFFFF;
+
+      &:before {
+        background: url("../../images/email.png") no-repeat center / contain;
+      }
+    }
+
+    .contact__description {
+      color: #FFFFFF;
+      opacity: .8;
+    }
+  }
+}

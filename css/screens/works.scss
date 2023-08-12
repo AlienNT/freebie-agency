@@ -1,0 +1,240 @@
+.works-screen {
+  .works-screen__row {
+    @media all and (max-width: 900px) {
+      flex-direction: column;
+    }
+  }
+
+  .works-content-col {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .works-title__wrapper {
+    position: relative;
+    width: 100%;
+    height: 260px;
+  }
+
+  .works-filter-list {
+    display: flex;
+    gap: 15px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 600px;
+  }
+
+  .works-filter {
+    font-family: $fontOpenSans;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.832px;
+
+    button {
+      font-size: 13px;
+      color: #252525;
+      text-transform: uppercase;
+      background: transparent;
+      opacity: .3;
+      cursor: pointer;
+      transition: .2s ease;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    &.active {
+      button {
+        opacity: 1;
+      }
+    }
+  }
+
+  .works-card {
+    padding-top: 100%;
+    padding-left: 100%;
+    width: 0;
+    height: 0;
+    position: relative;
+    display: flex;
+  }
+
+  .works-card__wrapper {
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    max-width: 600px;
+    max-height: 600px;
+  }
+
+  .works-card__title {
+    color: #252525;
+    font-family: $fontOswald;
+    font-size: 2.8rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: 3.072px;
+    position: absolute;
+    max-width: 420px;
+    z-index: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    @media #{$mediumBreakpoint} {
+      font-size: 2.4rem;
+    }
+  }
+
+  .works-card__image,
+  .works-card__description,
+  .works-card__subtitle {
+    margin-bottom: 0.938rem;
+  }
+
+  .works-card__image {
+    position: relative;
+    width: 0;
+    height: 0;
+    padding-top: 75%;
+    padding-left: 75%;
+
+    &:after, img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+    }
+
+    &:after {
+      content: '';
+      background: #F3F4F6;
+      opacity: .6;
+    }
+
+    img {
+      object-fit: cover;
+    }
+  }
+
+  .works-card__subtitle,
+  .works-card__description,
+  .works-card__button {
+    max-width: 336px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .works-card__subtitle {
+    color: #252525;
+    text-align: right;
+    font-family: $fontOpenSans;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: 1.152px;
+  }
+
+  .works-card__description {
+    color: #C2C2C2;
+    text-align: right;
+    font-family: $fontOpenSans;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 23px; /* 176.923% */
+    letter-spacing: 0.832px;
+  }
+
+  .works-card__button {
+    color: #252525;
+    font-family: $fontOpenSans;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.832px;
+    background: transparent;
+    display: block;
+    cursor: pointer;
+
+
+  }
+
+  .works-button {
+    color: #252525;
+    font-family: $fontOswald;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: auto;
+    margin-left: auto;
+    background: transparent;
+    display: block;
+  }
+
+  .works-card__button,
+  .works-button {
+    transition: .2s ease;
+
+    &:hover {
+      color: lighten(#252525, 30%);
+      cursor: pointer;
+    }
+  }
+
+  .works-content-col {
+    &:nth-of-type(2n) {
+      .works-card {
+        margin-left: auto;
+      }
+
+      .works-card__title {
+        left: 0;
+        top: 50%;
+        text-align: left;
+      }
+
+      .works-card__image {
+        margin-left: auto;
+      }
+
+      .works-card__subtitle,
+      .works-card__description,
+      .works-card__button {
+        text-align: right;
+      }
+    }
+
+    &:nth-of-type(2n - 1) {
+      .works-card {
+        margin-right: auto;
+      }
+
+      .works-card__title {
+        right: 0;
+        top: 50%;
+        text-align: right;
+      }
+
+      .works-card__image {
+        margin-right: auto;
+      }
+
+      .works-card__subtitle,
+      .works-card__description,
+      .works-card__button {
+        text-align: left;
+      }
+    }
+  }
+}

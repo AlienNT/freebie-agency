@@ -1,0 +1,55 @@
+@import "../mixins";
+@import "../variables/colors";
+
+.home-screen {
+  @extend .flex-center;
+  @include useBefore();
+
+  transition: .2s ease;
+  background: url("../../images/bg.png") no-repeat center center;
+  background-size: cover;
+  position: relative;
+
+  &:before {
+    top: 0;
+    left: 0;
+    background: linear-gradient(178deg, #000 0%, rgba(0, 0, 0, 0.00) 100%);
+    position: absolute;
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  .home-screen__title,
+  .home-screen__description {
+    color: $colorLight;
+    text-align: center;
+  }
+
+  .home-screen__title {
+    margin-bottom: 1.563rem;
+    font-family: $fontOswald;
+    font-size: 4.5rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 4.608px;
+    @media #{$mediumBreakpoint} {
+      font-size: 4rem;
+    }
+  }
+
+  .home-screen__description {
+    color: #FFF;
+    text-align: center;
+    font-family: $fontOpenSans;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1.28px;
+    opacity: 0.8;
+  }
+}
