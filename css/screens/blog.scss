@@ -84,7 +84,7 @@ $arrowWidth: 20px;
     .star {
       width: 15px;
       height: 15px;
-      background: url("../../images/star.png") no-repeat center / cover;
+      background: url("public/images/star.png") no-repeat center / cover;
 
       &:last-of-type {
         opacity: .2;
@@ -105,7 +105,7 @@ $arrowWidth: 20px;
       cursor: pointer;
       opacity: 0.5;
       transition: .2s ease;
-      background: url("../../images/next.png") no-repeat center / cover;
+      background: url("public/images/next.png") no-repeat center / cover;
 
       &:not([disabled]) {
         &:hover {

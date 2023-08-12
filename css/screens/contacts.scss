@@ -40,7 +40,7 @@
       width: 2.188rem;
       height: 2.188rem;
       margin: auto auto 1rem;
-      background: url("../../images/s7_1.png") no-repeat center / contain;
+      background: url("public/images/s7_1.png") no-repeat center / contain;
 
     }
   }
@@ -60,7 +60,7 @@
       width: 9px;
       height: 9px;
       margin: 23px auto auto;
-      background: url("../../images/next.png") no-repeat center / contain;
+      background: url("public/images/next.png") no-repeat center / contain;
     }
   }
 
@@ -71,7 +71,7 @@
       color: #FFFFFF;
 
       &:before {
-        background: url("../../images/email.png") no-repeat center / contain;
+        background: url("public/images/email.png") no-repeat center / contain;
       }
     }
 

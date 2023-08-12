@@ -131,7 +131,7 @@
   .branding-card {
     .service-card__title {
       &:after {
-        background-image: url("../../images/graphic-design.svg");
+        background-image: url("public/images/graphic-design.svg");
       }
     }
   }
@@ -139,7 +139,7 @@
   .design-card {
     .service-card__title {
       &:after {
-        background-image: url("../../images/pencil-case.svg");
+        background-image: url("public/images/pencil-case.svg");
       }
     }
   }
@@ -147,7 +147,7 @@
   .development-card {
     .service-card__title {
       &:after {
-        background-image: url("../../images/coding.svg");
+        background-image: url("public/images/coding.svg");
       }
     }
   }
