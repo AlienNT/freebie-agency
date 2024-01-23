@@ -12,6 +12,7 @@ export default defineConfig(({command}) => {
                 plugins: [autoprefixer]
             }
         },
+        assetsInclude: ['images/*.webp', 'images/*.png'],
         base
     }
 })
