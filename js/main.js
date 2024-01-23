@@ -53,6 +53,10 @@ document.onclick = e => {
     }
 }
 
+window.onload = () => {
+    setTimeout(() => {document.body.style.opacity = '1'}, 500)
+}
+
 function toggleNavActive(e) {
     const target = e.target
     const isLink = target.closest('.nav-link')
@@ -64,55 +68,6 @@ function toggleNavActive(e) {
         target.classList.add('active')
     }
 }
-
-// function slider(selector) {
-//     const sliders = document.querySelectorAll(selector)
-//     sliders.forEach(slider => {
-//         let position = 0
-//         slider.onclick = (e) => {
-//             const isNext = e.target.classList.contains('arrow-right')
-//             const isPrev = e.target.classList.contains('arrow-left')
-//             const slidesContainer = slider.querySelector('.slides')
-//             const slides = slidesContainer.children
-//
-//             if (slides.length <= 1) return
-//
-//             const isNextDisable = position >= slides.length - 1
-//             const isPrevDisable = position < 1
-//
-//             if (isNext && !isNextDisable) position++
-//             if (isPrev && !isPrevDisable) position--
-//
-//             const nextArrow = slider.querySelector('.arrow-right')
-//             const prevArrow = slider.querySelector('.arrow-left')
-//
-//             toggleDisabledArrows({
-//                 nextArrow,
-//                 prevArrow,
-//                 isNextDisable: position + 1 > slides.length - 1,
-//                 isPrevDisable: position <= 0
-//             })
-//
-//
-//             slidesContainer.style.cssText = `transform: translateX(-${100 * position}%);`
-//         }
-//     })
-//
-//     function toggleDisabledArrows({nextArrow, prevArrow, isPrevDisable, isNextDisable}) {
-//         if (!nextArrow || !prevArrow) return;
-//
-//         toggleAttribute({
-//             target: nextArrow,
-//             value: isNextDisable
-//         })
-//
-//         toggleAttribute({
-//             target: prevArrow,
-//             value: isPrevDisable
-//         })
-//
-//     }
-// }
 
 
 function toggleNav() {
