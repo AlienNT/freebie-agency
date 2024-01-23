@@ -4,7 +4,7 @@ import autoprefixer from "autoprefixer";
 import * as path from "path";
 
 export default defineConfig(({command}) => {
-    const base = command === 'build' ? '/freebie-agency' : '/'
+    const base = command === 'build' ? '/freebie-agency/' : '/'
 
     return {
         plugins: [postcss()],
@@ -14,12 +14,6 @@ export default defineConfig(({command}) => {
             }
         },
         assetsInclude: ['images/*.webp', 'images/*.png'],
-        resolve: {
-            alias: {
-                "@": path.resolve(__dirname, "/src"),
-                "~@": path.resolve(__dirname, "/src"),
-            },
-        },
         base
     }
 })
